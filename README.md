@@ -83,9 +83,3 @@ Running the notebook produces:
 - `data/processed/test_predictions.json` — per-test-event predicted class, confidence,
   top-3 alternatives, and raw feature snapshot (true label kept only for offline evaluation,
   never passed to the LLM in Part 2)
-
-## Next steps (not yet built)
-
-- `02_cti_alert_generation.ipynb` — Part 2: structured CTI alert + LLM enrichment via Ollama
-- `03_shap_evidence.ipynb` — Part 3 (optional bonus)
-- demo interface — Part 4
