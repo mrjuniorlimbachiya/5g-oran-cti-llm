@@ -1,0 +1,1039 @@
+[
+  {
+    "alert": {
+      "alert_id": "CXAb1k1Dtddl7eTeXc",
+      "detection_timestamp": "",
+      "predicted_threat_class": "benign",
+      "prediction_confidence": 1.0,
+      "alternative_predictions": [
+        {
+          "class": "benign",
+          "confidence": 1.0
+        },
+        {
+          "class": "bruteforce",
+          "confidence": 0.0
+        },
+        {
+          "class": "web",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 5524,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "http",
+        "flow duration (s)": 16.517246,
+        "bytes sent by source": 45000.0,
+        "bytes sent by destination": 1417569.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "ShADadtTFf",
+        "packets from source": 410,
+        "src_ip_bytes": 61484,
+        "packets from destination": 851,
+        "dst_ip_bytes": 1453769,
+        "ip_proto": 6,
+        "http_trans_depth": 178,
+        "files_total_bytes": 7283.0,
+        "is_GET_mthd": 1,
+        "http_status_error": 0,
+        "is_file_transfered": 1
+      }
+    },
+    "true_label": "benign",
+    "llm_response": {
+      "contextualisation": "This alert indicates a normal HTTP/HTTPS connection from an O-Cloud Edge Server to a destination server, which is expected behaviour.",
+      "correlation_with_known_behaviour": "The network observations show proportionate byte/packet counts in both directions and a clean connection state (SF), aligning with the reference threat knowledge for 'benign'.",
+      "severity": "Low",
+      "possible_impact": "If this is a real, successful attack, it could be used to exfiltrate sensitive data or inject malware into the network.",
+      "immediate_response": "Verify the connection state and ensure that all HTTP/HTTPS traffic is properly secured.",
+      "long_term_mitigation": "Implement additional security measures such as intrusion detection systems, secure configuration of O-Cloud Edge Servers, and regular monitoring of HTTP/HTTPS traffic.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is high (1.0) and there are no alternative predictions with a higher confidence level."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a normal HTTP/HTTPS connection from an O-Cloud Edge Server to a destination server, which is expected behaviour.\",\n  \"correlation_with_known_behaviour\": \"The network observations show proportionate byte/packet counts in both directions and a clean connection state (SF), aligning with the reference threat knowledge for 'benign'.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If this is a real, successful attack, it could be used to exfiltrate sensitive data or inject malware into the network.\",\n  \"immediate_response\": \"Verify the connection state and ensure that all HTTP/HTTPS traffic is properly secured.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as intrusion detection systems, secure configuration of O-Cloud Edge Servers, and regular monitoring of HTTP/HTTPS traffic.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (1.0) and there are no alternative predictions with a higher confidence level.\"\n}",
+    "generation_time_seconds": 57.845,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CXLCk73hmiEmQI3QF",
+      "detection_timestamp": "",
+      "predicted_threat_class": "benign",
+      "prediction_confidence": 0.5416,
+      "alternative_predictions": [
+        {
+          "class": "benign",
+          "confidence": 0.5416
+        },
+        {
+          "class": "dos",
+          "confidence": 0.3777
+        },
+        {
+          "class": "bruteforce",
+          "confidence": 0.0439
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 52461,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 7.027725,
+        "bytes sent by source": 175.0,
+        "bytes sent by destination": 1835.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 5,
+        "src_ip_bytes": 315,
+        "packets from destination": 5,
+        "dst_ip_bytes": 1975,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "benign",
+    "llm_response": {
+      "contextualisation": "This alert indicates a normal DNS query from an unknown source to a destination port 53, which is a common service for domain name resolution.",
+      "correlation_with_known_behaviour": "The network_observations show proportionate byte/packet counts in both directions (src_ip_bytes: 315, dst_ip_bytes: 1975), indicating typical DNS traffic.",
+      "severity": "Low",
+      "possible_impact": "If this is a real attack, it could be used to conduct DNS amplification attacks or other malicious activities against the network.",
+      "immediate_response": "Verify the source IP address and ensure it's not a known legitimate user.",
+      "long_term_mitigation": "Implement rate limiting on DNS queries from unknown sources and monitor for suspicious patterns.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is moderate (0.5416), and alternative predictions include 'dos' with higher confidence, indicating a need for human review to confirm the benign classification."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a normal DNS query from an unknown source to a destination port 53, which is a common service for domain name resolution.\",\n  \"correlation_with_known_behaviour\": \"The network_observations show proportionate byte/packet counts in both directions (src_ip_bytes: 315, dst_ip_bytes: 1975), indicating typical DNS traffic.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If this is a real attack, it could be used to conduct DNS amplification attacks or other malicious activities against the network.\",\n  \"immediate_response\": \"Verify the source IP address and ensure it's not a known legitimate user.\",\n  \"long_term_mitigation\": \"Implement rate limiting on DNS queries from unknown sources and monitor for suspicious patterns.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is moderate (0.5416), and alternative predictions include 'dos' with higher confidence, indicating a need for human review to confirm the benign classification.\"\n}",
+    "generation_time_seconds": 48.781,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CcGwVx2ldYHI6X6ee3",
+      "detection_timestamp": "",
+      "predicted_threat_class": "bruteforce",
+      "prediction_confidence": 0.7263,
+      "alternative_predictions": [
+        {
+          "class": "bruteforce",
+          "confidence": 0.7263
+        },
+        {
+          "class": "benign",
+          "confidence": 0.1237
+        },
+        {
+          "class": "dos",
+          "confidence": 0.052
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 35233,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 0.002239,
+        "bytes sent by source": 43.0,
+        "bytes sent by destination": 103.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 1,
+        "src_ip_bytes": 71,
+        "packets from destination": 1,
+        "dst_ip_bytes": 131,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "web",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential bruteforce attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.",
+      "correlation_with_known_behaviour": "The network observations show repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge for bruteforce attacks.",
+      "severity": "Medium",
+      "possible_impact": "If successful, this attack could lead to unauthorized access or disruption of critical O-RAN services.",
+      "immediate_response": "Verify the integrity of the affected service and ensure all authentication mechanisms are functioning correctly.",
+      "long_term_mitigation": "Implement rate limiting and IP blocking for the affected service to prevent future brute-force attempts.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is moderate (0.7263) and there are alternative predictions that include benign and DoS labels, indicating some ambiguity in the alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential bruteforce attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.\",\n  \"correlation_with_known_behaviour\": \"The network observations show repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge for bruteforce attacks.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"If successful, this attack could lead to unauthorized access or disruption of critical O-RAN services.\",\n  \"immediate_response\": \"Verify the integrity of the affected service and ensure all authentication mechanisms are functioning correctly.\",\n  \"long_term_mitigation\": \"Implement rate limiting and IP blocking for the affected service to prevent future brute-force attempts.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is moderate (0.7263) and there are alternative predictions that include benign and DoS labels, indicating some ambiguity in the alert.\"\n}",
+    "generation_time_seconds": 48.606,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CjSsg53Xov0zaaH8Ka",
+      "detection_timestamp": "",
+      "predicted_threat_class": "bruteforce",
+      "prediction_confidence": 0.6626,
+      "alternative_predictions": [
+        {
+          "class": "bruteforce",
+          "confidence": 0.6626
+        },
+        {
+          "class": "benign",
+          "confidence": 0.2125
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0465
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 41641,
+        "destination port": 3478,
+        "transport protocol": "udp",
+        "application service": "-",
+        "flow duration (s)": 0.178267,
+        "bytes sent by source": 80.0,
+        "bytes sent by destination": 64.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 2,
+        "src_ip_bytes": 136,
+        "packets from destination": 2,
+        "dst_ip_bytes": 120,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "ddos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential brute-force attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.",
+      "correlation_with_known_behaviour": "The network observations show repeated connection attempts from a small number of sources within a short window, which aligns with the reference threat knowledge for bruteforce attacks.",
+      "severity": "Medium",
+      "possible_impact": "A successful brute-force attack could lead to unauthorized access to sensitive O-RAN services or data.",
+      "immediate_response": "Verify the integrity of the affected service and implement rate limiting on the source IP addresses.",
+      "long_term_mitigation": "Implement additional security measures such as IP blocking, authentication tokens, or multi-factor authentication for all O-RAN services.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is moderate (0.6626) and there are alternative predictions that include benign and DDOS classifications, indicating a need for human review to confirm the accuracy of this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential brute-force attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.\",\n  \"correlation_with_known_behaviour\": \"The network observations show repeated connection attempts from a small number of sources within a short window, which aligns with the reference threat knowledge for bruteforce attacks.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"A successful brute-force attack could lead to unauthorized access to sensitive O-RAN services or data.\",\n  \"immediate_response\": \"Verify the integrity of the affected service and implement rate limiting on the source IP addresses.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as IP blocking, authentication tokens, or multi-factor authentication for all O-RAN services.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is moderate (0.6626) and there are alternative predictions that include benign and DDOS classifications, indicating a need for human review to confirm the accuracy of this alert.\"\n}",
+    "generation_time_seconds": 49.76,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CIv2HH3JhtxLTz9TO7",
+      "detection_timestamp": "",
+      "predicted_threat_class": "ddos",
+      "prediction_confidence": 0.9998,
+      "alternative_predictions": [
+        {
+          "class": "ddos",
+          "confidence": 0.9998
+        },
+        {
+          "class": "dos",
+          "confidence": 0.0002
+        },
+        {
+          "class": "bruteforce",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 14271,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 6.5e-05,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "S1",
+        "missed_bytes": 0,
+        "TCP flag history": "Sh",
+        "packets from source": 2,
+        "src_ip_bytes": 80,
+        "packets from destination": 2,
+        "dst_ip_bytes": 88,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "ddos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential Distributed Denial of Service (DDoS) attack on the O-Cloud Edge Server -- HTTP/HTTPS service, characterized by a high-volume, high-frequency burst of low-duration flows.",
+      "correlation_with_known_behaviour": "The network observations show TCP flag history 'Sh', indicating a possible TCP SYN flood, which is consistent with DDoS attacks that span multiple protocols.",
+      "severity": "High",
+      "possible_impact": "A successful attack could exhaust the server's resources, leading to service disruptions and potential data loss.",
+      "immediate_response": "Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server -- HTTP/HTTPS service.",
+      "long_term_mitigation": "Implement DDoS mitigation strategies such as rate limiting, IP blocking, and content delivery network (CDN) caching to reduce the impact of future attacks.",
+      "human_review_required": true,
+      "human_review_reason": "Although the prediction confidence is high (0.9998), the alternative predictions include a low-confidence 'dos' label with a very low confidence score (0.0002), suggesting that human review is necessary to confirm the accuracy of this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential Distributed Denial of Service (DDoS) attack on the O-Cloud Edge Server -- HTTP/HTTPS service, characterized by a high-volume, high-frequency burst of low-duration flows.\",\n  \"correlation_with_known_behaviour\": \"The network observations show TCP flag history 'Sh', indicating a possible TCP SYN flood, which is consistent with DDoS attacks that span multiple protocols.\",\n  \"severity\": \"High\",\n  \"possible_impact\": \"A successful attack could exhaust the server's resources, leading to service disruptions and potential data loss.\",\n  \"immediate_response\": \"Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server -- HTTP/HTTPS service.\",\n  \"long_term_mitigation\": \"Implement DDoS mitigation strategies such as rate limiting, IP blocking, and content delivery network (CDN) caching to reduce the impact of future attacks.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"Although the prediction confidence is high (0.9998), the alternative predictions include a low-confidence 'dos' label with a very low confidence score (0.0002), suggesting that human review is necessary to confirm the accuracy of this alert.\"\n}",
+    "generation_time_seconds": 52.137,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CPW3cj4M9Et2C3ye8g",
+      "detection_timestamp": "",
+      "predicted_threat_class": "ddos",
+      "prediction_confidence": 0.9544,
+      "alternative_predictions": [
+        {
+          "class": "ddos",
+          "confidence": 0.9544
+        },
+        {
+          "class": "dos",
+          "confidence": 0.0453
+        },
+        {
+          "class": "benign",
+          "confidence": 0.0002
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 65495,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 0.000389,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "RSTRH",
+        "missed_bytes": 0,
+        "TCP flag history": "Ar",
+        "packets from source": 2,
+        "src_ip_bytes": 80,
+        "packets from destination": 2,
+        "dst_ip_bytes": 80,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "ddos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential Distributed Denial of Service (DDoS) attack on the O-Cloud Edge Server -- HTTP/HTTPS service, characterized by a high-volume, high-frequency burst of low-duration flows.",
+      "correlation_with_known_behaviour": "The network observations show TCP flag history 'Ar', indicating a possible protocol switch, which is consistent with DDoS attacks that often span multiple protocols. However, the flow duration (s) is very short (0.000389 s), which might be indicative of a DoS attack instead.",
+      "severity": "Medium",
+      "possible_impact": "A successful DDoS attack could overwhelm the server, causing it to become unresponsive or crash, leading to potential data loss and disruption of services.",
+      "immediate_response": "Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server -- HTTP/HTTPS service immediately.",
+      "long_term_mitigation": "Implement a robust DDoS mitigation strategy, including rate limiting, IP blocking, and content delivery network (CDN) acceleration, to prevent future attacks.",
+      "human_review_required": true,
+      "human_review_reason": "Although the predicted threat class is 'ddos' with high confidence (0.9544), one of the alternative predictions is 'dos' with moderate confidence (0.0453), suggesting that human review is necessary to confirm the actual threat category."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential Distributed Denial of Service (DDoS) attack on the O-Cloud Edge Server -- HTTP/HTTPS service, characterized by a high-volume, high-frequency burst of low-duration flows.\",\n  \"correlation_with_known_behaviour\": \"The network observations show TCP flag history 'Ar', indicating a possible protocol switch, which is consistent with DDoS attacks that often span multiple protocols. However, the flow duration (s) is very short (0.000389 s), which might be indicative of a DoS attack instead.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"A successful DDoS attack could overwhelm the server, causing it to become unresponsive or crash, leading to potential data loss and disruption of services.\",\n  \"immediate_response\": \"Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server -- HTTP/HTTPS service immediately.\",\n  \"long_term_mitigation\": \"Implement a robust DDoS mitigation strategy, including rate limiting, IP blocking, and content delivery network (CDN) acceleration, to prevent future attacks.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"Although the predicted threat class is 'ddos' with high confidence (0.9544), one of the alternative predictions is 'dos' with moderate confidence (0.0453), suggesting that human review is necessary to confirm the actual threat category.\"\n}",
+    "generation_time_seconds": 55.065,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CJopWu2qkhssnaNBo9",
+      "detection_timestamp": "",
+      "predicted_threat_class": "dos",
+      "prediction_confidence": 0.9995,
+      "alternative_predictions": [
+        {
+          "class": "dos",
+          "confidence": 0.9995
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0003
+        },
+        {
+          "class": "bruteforce",
+          "confidence": 0.0001
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 48377,
+        "destination port": 123,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 3.9e-05,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "REJ",
+        "missed_bytes": 0,
+        "TCP flag history": "Sr",
+        "packets from source": 6,
+        "src_ip_bytes": 240,
+        "packets from destination": 1,
+        "dst_ip_bytes": 40,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "dos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server, characterized by short-lived or incomplete connections and high frequency towards one destination.",
+      "correlation_with_known_behaviour": "The network observations show small packet sizes, high packets from source, and TCP flag history indicating 'Sr', which aligns with the reference threat knowledge of DoS attacks.",
+      "severity": "High",
+      "possible_impact": "If successful, this could exhaust the target's resources or connection capacity, leading to service disruption or data loss.",
+      "immediate_response": "Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server.",
+      "long_term_mitigation": "Implement rate limiting and IP blocking mechanisms to prevent similar attacks in the future.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is high (0.9995), but alternative predictions include a low-confidence 'ddos' classification, suggesting human review is necessary to confirm the alert's accuracy."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server, characterized by short-lived or incomplete connections and high frequency towards one destination.\",\n  \"correlation_with_known_behaviour\": \"The network observations show small packet sizes, high packets from source, and TCP flag history indicating 'Sr', which aligns with the reference threat knowledge of DoS attacks.\",\n  \"severity\": \"High\",\n  \"possible_impact\": \"If successful, this could exhaust the target's resources or connection capacity, leading to service disruption or data loss.\",\n  \"immediate_response\": \"Verify network connectivity and check for any unusual traffic patterns on the O-Cloud Edge Server.\",\n  \"long_term_mitigation\": \"Implement rate limiting and IP blocking mechanisms to prevent similar attacks in the future.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (0.9995), but alternative predictions include a low-confidence 'ddos' classification, suggesting human review is necessary to confirm the alert's accuracy.\"\n}",
+    "generation_time_seconds": 49.878,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CDapPW38vzZF1dF3q1",
+      "detection_timestamp": "",
+      "predicted_threat_class": "dos",
+      "prediction_confidence": 0.9998,
+      "alternative_predictions": [
+        {
+          "class": "dos",
+          "confidence": 0.9998
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0001
+        },
+        {
+          "class": "probe",
+          "confidence": 0.0001
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 21881,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 0.000119,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "REJ",
+        "missed_bytes": 0,
+        "TCP flag history": "Sr",
+        "packets from source": 1,
+        "src_ip_bytes": 40,
+        "packets from destination": 1,
+        "dst_ip_bytes": 40,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "dos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server's HTTP/HTTPS service, characterized by short-lived connections and high packet frequency towards one destination.",
+      "correlation_with_known_behaviour": "The network observations show small packet sizes, high packets from source and destination, and a connection state of REJ, which aligns with the reference threat knowledge for DoS attacks.",
+      "severity": "High",
+      "possible_impact": "If successful, this attack could exhaust the target's resources or connection capacity, leading to service disruptions and potential data loss.",
+      "immediate_response": "Verify the HTTP/HTTPS service is functioning correctly and check for any unusual network activity.",
+      "long_term_mitigation": "Implement rate limiting and IP blocking mechanisms to prevent similar attacks in the future.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is very high (0.9998) with only two alternative predictions, indicating a strong likelihood of a real attack."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server's HTTP/HTTPS service, characterized by short-lived connections and high packet frequency towards one destination.\",\n  \"correlation_with_known_behaviour\": \"The network observations show small packet sizes, high packets from source and destination, and a connection state of REJ, which aligns with the reference threat knowledge for DoS attacks.\",\n  \"severity\": \"High\",\n  \"possible_impact\": \"If successful, this attack could exhaust the target's resources or connection capacity, leading to service disruptions and potential data loss.\",\n  \"immediate_response\": \"Verify the HTTP/HTTPS service is functioning correctly and check for any unusual network activity.\",\n  \"long_term_mitigation\": \"Implement rate limiting and IP blocking mechanisms to prevent similar attacks in the future.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is very high (0.9998) with only two alternative predictions, indicating a strong likelihood of a real attack.\"\n}",
+    "generation_time_seconds": 49.314,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CSpIgo2RqrriyHAOA1",
+      "detection_timestamp": "",
+      "predicted_threat_class": "probe",
+      "prediction_confidence": 1.0,
+      "alternative_predictions": [
+        {
+          "class": "probe",
+          "confidence": 1.0
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0
+        },
+        {
+          "class": "benign",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 57951,
+        "destination port": 8086,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 0.000105,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "REJ",
+        "missed_bytes": 0,
+        "TCP flag history": "Sr",
+        "packets from source": 2,
+        "src_ip_bytes": 88,
+        "packets from destination": 2,
+        "dst_ip_bytes": 80,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "probe",
+    "llm_response": {
+      "contextualisation": "This alert indicates that a potential probe attack has been detected on the O-Cloud Edge Server, where an attacker is likely enumerating live hosts and open ports without transferring significant data.",
+      "correlation_with_known_behaviour": "The network observations show short connections to varied or sequential ports with little or no data transferred (REJ/S0 states), aligning with the reference threat knowledge for a probe attack.",
+      "severity": "Low",
+      "possible_impact": "If successful, this could lead to further reconnaissance and potentially more targeted attacks on the O-Cloud Edge Server.",
+      "immediate_response": "Verify network connections and ensure all ports are properly secured.",
+      "long_term_mitigation": "Implement additional security measures such as intrusion detection systems, firewalls, and regular vulnerability assessments for the O-RAN O-Cloud.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is high (1.0), but alternative predictions include a low-confidence 'ddos' label, indicating that human review is necessary to confirm the accuracy of this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates that a potential probe attack has been detected on the O-Cloud Edge Server, where an attacker is likely enumerating live hosts and open ports without transferring significant data.\",\n  \"correlation_with_known_behaviour\": \"The network observations show short connections to varied or sequential ports with little or no data transferred (REJ/S0 states), aligning with the reference threat knowledge for a probe attack.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If successful, this could lead to further reconnaissance and potentially more targeted attacks on the O-Cloud Edge Server.\",\n  \"immediate_response\": \"Verify network connections and ensure all ports are properly secured.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as intrusion detection systems, firewalls, and regular vulnerability assessments for the O-RAN O-Cloud.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (1.0), but alternative predictions include a low-confidence 'ddos' label, indicating that human review is necessary to confirm the accuracy of this alert.\"\n}",
+    "generation_time_seconds": 50.111,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "Con0Fw4NjG66WeXUGe",
+      "detection_timestamp": "",
+      "predicted_threat_class": "probe",
+      "prediction_confidence": 0.9999,
+      "alternative_predictions": [
+        {
+          "class": "probe",
+          "confidence": 0.9999
+        },
+        {
+          "class": "benign",
+          "confidence": 0.0
+        },
+        {
+          "class": "dos",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 57956,
+        "destination port": 27214,
+        "transport protocol": "tcp",
+        "application service": "-",
+        "flow duration (s)": 5.5e-05,
+        "bytes sent by source": 0.0,
+        "bytes sent by destination": 0.0,
+        "connection state": "REJ",
+        "missed_bytes": 0,
+        "TCP flag history": "Sr",
+        "packets from source": 1,
+        "src_ip_bytes": 44,
+        "packets from destination": 1,
+        "dst_ip_bytes": 40,
+        "ip_proto": 6,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "probe",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential reconnaissance/scanning attack on the O-Cloud Edge Server, as indicated by the high confidence in the 'probe' threat category and the network observations showing many short connections to varied or sequential ports with little data transferred.",
+      "correlation_with_known_behaviour": "The network_observations show characteristics that align with the reference threat knowledge for 'probe', such as REJ/S0 states, low bytes sent, and varied port numbers.",
+      "severity": "High",
+      "possible_impact": "If successful, this attack could reveal sensitive information about the O-Cloud Edge Server's configuration and potentially be used to launch more targeted attacks.",
+      "immediate_response": "Verify the network connections and ensure that no unauthorized access has been gained.",
+      "long_term_mitigation": "Implement additional security measures, such as intrusion detection systems with behavioral analysis capabilities, to detect and prevent similar reconnaissance/scanning attacks in the future.",
+      "human_review_required": true,
+      "human_review_reason": "The high prediction confidence (0.9999) and lack of alternative predictions suggest that this alert requires human review to confirm its accuracy."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential reconnaissance/scanning attack on the O-Cloud Edge Server, as indicated by the high confidence in the 'probe' threat category and the network observations showing many short connections to varied or sequential ports with little data transferred.\",\n  \"correlation_with_known_behaviour\": \"The network_observations show characteristics that align with the reference threat knowledge for 'probe', such as REJ/S0 states, low bytes sent, and varied port numbers.\",\n  \"severity\": \"High\",\n  \"possible_impact\": \"If successful, this attack could reveal sensitive information about the O-Cloud Edge Server's configuration and potentially be used to launch more targeted attacks.\",\n  \"immediate_response\": \"Verify the network connections and ensure that no unauthorized access has been gained.\",\n  \"long_term_mitigation\": \"Implement additional security measures, such as intrusion detection systems with behavioral analysis capabilities, to detect and prevent similar reconnaissance/scanning attacks in the future.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The high prediction confidence (0.9999) and lack of alternative predictions suggest that this alert requires human review to confirm its accuracy.\"\n}",
+    "generation_time_seconds": 51.032,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CWcc0z4qDHpDhZhW74",
+      "detection_timestamp": "",
+      "predicted_threat_class": "web",
+      "prediction_confidence": 1.0,
+      "alternative_predictions": [
+        {
+          "class": "web",
+          "confidence": 1.0
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0
+        },
+        {
+          "class": "benign",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 58887,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "http",
+        "flow duration (s)": 0.159416,
+        "bytes sent by source": 138.0,
+        "bytes sent by destination": 686.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "ShADTadtfF",
+        "packets from source": 12,
+        "src_ip_bytes": 916,
+        "packets from destination": 10,
+        "dst_ip_bytes": 1908,
+        "ip_proto": 6,
+        "http_trans_depth": 1,
+        "files_total_bytes": 459.0,
+        "is_GET_mthd": 1,
+        "http_status_error": 1,
+        "is_file_transfered": 1
+      }
+    },
+    "true_label": "web",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential web application attack, where an HTTP request is being made to a cloud edge server's HTTP/HTTPS service with unusual parameters or payload patterns.",
+      "correlation_with_known_behaviour": "The network observations show HTTP flows with an unusual request method (is_GET_mthd: 1) and a high number of packets from the source, which aligns with the reference threat knowledge of web application attacks.",
+      "severity": "Medium",
+      "possible_impact": "If this is a real, successful attack, it could lead to unauthorized access or data tampering in the cloud edge server's HTTP/HTTPS service.",
+      "immediate_response": "Verify the HTTP request parameters and payload patterns to ensure they are valid and expected.",
+      "long_term_mitigation": "Implement additional security measures such as input validation, rate limiting, and secure coding practices for the cloud edge server's HTTP/HTTPS service.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is high (1.0), but there are alternative predictions with low confidence (ddos: 0.0, benign: 0.0), indicating that human review is necessary to confirm the accuracy of this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential web application attack, where an HTTP request is being made to a cloud edge server's HTTP/HTTPS service with unusual parameters or payload patterns.\",\n  \"correlation_with_known_behaviour\": \"The network observations show HTTP flows with an unusual request method (is_GET_mthd: 1) and a high number of packets from the source, which aligns with the reference threat knowledge of web application attacks.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"If this is a real, successful attack, it could lead to unauthorized access or data tampering in the cloud edge server's HTTP/HTTPS service.\",\n  \"immediate_response\": \"Verify the HTTP request parameters and payload patterns to ensure they are valid and expected.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as input validation, rate limiting, and secure coding practices for the cloud edge server's HTTP/HTTPS service.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (1.0), but there are alternative predictions with low confidence (ddos: 0.0, benign: 0.0), indicating that human review is necessary to confirm the accuracy of this alert.\"\n}",
+    "generation_time_seconds": 52.01,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CrihCk3bXDTreVtTf",
+      "detection_timestamp": "",
+      "predicted_threat_class": "web",
+      "prediction_confidence": 1.0,
+      "alternative_predictions": [
+        {
+          "class": "web",
+          "confidence": 1.0
+        },
+        {
+          "class": "benign",
+          "confidence": 0.0
+        },
+        {
+          "class": "dos",
+          "confidence": 0.0
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+      "network_observations": {
+        "source port": 57236,
+        "destination port": 80,
+        "transport protocol": "tcp",
+        "application service": "http",
+        "flow duration (s)": 0.159488,
+        "bytes sent by source": 138.0,
+        "bytes sent by destination": 686.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "ShADTadtfF",
+        "packets from source": 12,
+        "src_ip_bytes": 916,
+        "packets from destination": 10,
+        "dst_ip_bytes": 1908,
+        "ip_proto": 6,
+        "http_trans_depth": 1,
+        "files_total_bytes": 459.0,
+        "is_GET_mthd": 1,
+        "http_status_error": 1,
+        "is_file_transfered": 1
+      }
+    },
+    "true_label": "web",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential web application attack, where an HTTP request is being made to a cloud edge server's HTTP/HTTPS service. The unusual parameters and payload patterns in the request may be indicative of SQL injection or XSS exploitation.",
+      "correlation_with_known_behaviour": "The network observations show HTTP flows with unusual request methods (is_GET_mthd: 1), parameters, and payload patterns (http_trans_depth: 1, is_file_transfered: 1), which aligns with the reference threat knowledge for web application attacks.",
+      "severity": "Medium",
+      "possible_impact": "If this is a real, successful attack, it could lead to unauthorized access or data breaches in the cloud edge server's HTTP/HTTPS service.",
+      "immediate_response": "Verify the request parameters and payload patterns against known good configurations to ensure they are not suspicious.",
+      "long_term_mitigation": "Implement additional security measures such as web application firewalls (WAFs), intrusion detection systems (IDS), and secure coding practices to prevent similar attacks.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is high (1.0) with no alternative predictions, indicating a strong likelihood of a real attack."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential web application attack, where an HTTP request is being made to a cloud edge server's HTTP/HTTPS service. The unusual parameters and payload patterns in the request may be indicative of SQL injection or XSS exploitation.\",\n  \"correlation_with_known_behaviour\": \"The network observations show HTTP flows with unusual request methods (is_GET_mthd: 1), parameters, and payload patterns (http_trans_depth: 1, is_file_transfered: 1), which aligns with the reference threat knowledge for web application attacks.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"If this is a real, successful attack, it could lead to unauthorized access or data breaches in the cloud edge server's HTTP/HTTPS service.\",\n  \"immediate_response\": \"Verify the request parameters and payload patterns against known good configurations to ensure they are not suspicious.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as web application firewalls (WAFs), intrusion detection systems (IDS), and secure coding practices to prevent similar attacks.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (1.0) with no alternative predictions, indicating a strong likelihood of a real attack.\"\n}",
+    "generation_time_seconds": 51.785,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CujAUo4QxFnee0suV1",
+      "detection_timestamp": "",
+      "predicted_threat_class": "benign",
+      "prediction_confidence": 0.3583,
+      "alternative_predictions": [
+        {
+          "class": "benign",
+          "confidence": 0.3583
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.3533
+        },
+        {
+          "class": "dos",
+          "confidence": 0.2151
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 52382,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 8.012047,
+        "bytes sent by source": 340.0,
+        "bytes sent by destination": 3080.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 10,
+        "src_ip_bytes": 620,
+        "packets from destination": 10,
+        "dst_ip_bytes": 3360,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "ddos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential benign network activity, likely normal operational traffic, as indicated by the 'benign' threat category and high confidence levels.",
+      "correlation_with_known_behaviour": "The network observations show clean connections with proportionate byte/packet counts in both directions, aligning with the reference threat knowledge for 'benign'.",
+      "severity": "Low",
+      "possible_impact": "If this is a real, successful attack, it could result in minor disruptions to network services.",
+      "immediate_response": "Verify the alert and ensure no actual malicious activity is occurring.",
+      "long_term_mitigation": "Implement additional monitoring and logging to detect similar benign traffic patterns.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence (0.3583) and alternative predictions do not strongly support a malicious attack, but human review is still necessary to confirm the benign nature of this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential benign network activity, likely normal operational traffic, as indicated by the 'benign' threat category and high confidence levels.\",\n  \"correlation_with_known_behaviour\": \"The network observations show clean connections with proportionate byte/packet counts in both directions, aligning with the reference threat knowledge for 'benign'.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If this is a real, successful attack, it could result in minor disruptions to network services.\",\n  \"immediate_response\": \"Verify the alert and ensure no actual malicious activity is occurring.\",\n  \"long_term_mitigation\": \"Implement additional monitoring and logging to detect similar benign traffic patterns.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence (0.3583) and alternative predictions do not strongly support a malicious attack, but human review is still necessary to confirm the benign nature of this alert.\"\n}",
+    "generation_time_seconds": 46.862,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CJEwmt2MXPIXvRLz2l",
+      "detection_timestamp": "",
+      "predicted_threat_class": "benign",
+      "prediction_confidence": 0.5722,
+      "alternative_predictions": [
+        {
+          "class": "benign",
+          "confidence": 0.5722
+        },
+        {
+          "class": "bruteforce",
+          "confidence": 0.3309
+        },
+        {
+          "class": "dos",
+          "confidence": 0.0413
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 43868,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 0.09209,
+        "bytes sent by source": 43.0,
+        "bytes sent by destination": 350.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 1,
+        "src_ip_bytes": 71,
+        "packets from destination": 1,
+        "dst_ip_bytes": 378,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "benign",
+    "llm_response": {
+      "contextualisation": "This alert indicates a normal DNS query from an unknown source to a destination port 53, which is expected in benign traffic.",
+      "correlation_with_known_behaviour": "The network observations align with the reference threat knowledge for 'benign', as the connection state is 'SF' and there are proportionate byte/packet counts in both directions.",
+      "severity": "Low",
+      "possible_impact": "If this is a real, successful attack, it could be used to intercept DNS queries and potentially disrupt network communications.",
+      "immediate_response": "Verify the source IP address and ensure that it is not a known malicious actor.",
+      "long_term_mitigation": "Implement additional DNS filtering and monitoring to detect and block suspicious DNS queries.",
+      "human_review_required": true,
+      "human_review_reason": "Although the predicted threat class is 'benign' with high confidence, one of the alternative predictions includes a 'dos' classification with moderate confidence, indicating that human review is necessary to confirm the lack of malicious intent."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a normal DNS query from an unknown source to a destination port 53, which is expected in benign traffic.\",\n  \"correlation_with_known_behaviour\": \"The network observations align with the reference threat knowledge for 'benign', as the connection state is 'SF' and there are proportionate byte/packet counts in both directions.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If this is a real, successful attack, it could be used to intercept DNS queries and potentially disrupt network communications.\",\n  \"immediate_response\": \"Verify the source IP address and ensure that it is not a known malicious actor.\",\n  \"long_term_mitigation\": \"Implement additional DNS filtering and monitoring to detect and block suspicious DNS queries.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"Although the predicted threat class is 'benign' with high confidence, one of the alternative predictions includes a 'dos' classification with moderate confidence, indicating that human review is necessary to confirm the lack of malicious intent.\"\n}",
+    "generation_time_seconds": 48.453,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CnCf5B3JY6K1gcpvKi",
+      "detection_timestamp": "",
+      "predicted_threat_class": "bruteforce",
+      "prediction_confidence": 0.6626,
+      "alternative_predictions": [
+        {
+          "class": "bruteforce",
+          "confidence": 0.6626
+        },
+        {
+          "class": "benign",
+          "confidence": 0.2125
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.0465
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 41641,
+        "destination port": 3478,
+        "transport protocol": "udp",
+        "application service": "-",
+        "flow duration (s)": 0.184245,
+        "bytes sent by source": 80.0,
+        "bytes sent by destination": 64.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 2,
+        "src_ip_bytes": 136,
+        "packets from destination": 2,
+        "dst_ip_bytes": 120,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "benign",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential brute-force attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.",
+      "correlation_with_known_behaviour": "The network observations show repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge for bruteforce attacks. However, the short flow duration and low bytes sent by source may indicate a potential false positive or a different type of attack.",
+      "severity": "Low",
+      "possible_impact": "If successful, this could lead to unauthorized access to sensitive O-RAN services, potentially disrupting network operations.",
+      "immediate_response": "Verify the integrity of the affected service and ensure all authentication mechanisms are functioning correctly.",
+      "long_term_mitigation": "Implement rate limiting on authentication attempts and consider using multi-factor authentication to reduce the effectiveness of brute-force attacks.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence is moderate (0.6626), and alternative predictions include a benign classification, indicating that human review is necessary to confirm or dismiss this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential brute-force attack against an O-RAN service, where multiple authentication attempts are made to guess valid credentials.\",\n  \"correlation_with_known_behaviour\": \"The network observations show repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge for bruteforce attacks. However, the short flow duration and low bytes sent by source may indicate a potential false positive or a different type of attack.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If successful, this could lead to unauthorized access to sensitive O-RAN services, potentially disrupting network operations.\",\n  \"immediate_response\": \"Verify the integrity of the affected service and ensure all authentication mechanisms are functioning correctly.\",\n  \"long_term_mitigation\": \"Implement rate limiting on authentication attempts and consider using multi-factor authentication to reduce the effectiveness of brute-force attacks.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is moderate (0.6626), and alternative predictions include a benign classification, indicating that human review is necessary to confirm or dismiss this alert.\"\n}",
+    "generation_time_seconds": 50.304,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CEp0gR1QPKlpjSNE1d",
+      "detection_timestamp": "",
+      "predicted_threat_class": "bruteforce",
+      "prediction_confidence": 0.5733,
+      "alternative_predictions": [
+        {
+          "class": "bruteforce",
+          "confidence": 0.5733
+        },
+        {
+          "class": "benign",
+          "confidence": 0.346
+        },
+        {
+          "class": "probe",
+          "confidence": 0.0295
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 58752,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 0.004263,
+        "bytes sent by source": 84.0,
+        "bytes sent by destination": 395.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 2,
+        "src_ip_bytes": 140,
+        "packets from destination": 2,
+        "dst_ip_bytes": 451,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "bruteforce",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential brute-force attack against an O-RAN service, where multiple connection attempts are made to guess valid credentials within a short window.",
+      "correlation_with_known_behaviour": "The network observations show small, repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge of repeated authentication attempts. However, the low prediction confidence and alternative benign prediction suggest some ambiguity in this correlation.",
+      "severity": "Medium",
+      "possible_impact": "If successful, a brute-force attack could lead to unauthorized access or disruption of O-RAN services.",
+      "immediate_response": "Verify the integrity of the O-Cloud Edge Server (O-RAN O-Cloud) and ensure all authentication attempts are legitimate.",
+      "long_term_mitigation": "Implement rate limiting on authentication attempts, monitor for suspicious patterns, and consider using multi-factor authentication.",
+      "human_review_required": true,
+      "human_review_reason": "The low prediction confidence (0.5733) and alternative benign prediction suggest that human review is necessary to confirm the threat category."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential brute-force attack against an O-RAN service, where multiple connection attempts are made to guess valid credentials within a short window.\",\n  \"correlation_with_known_behaviour\": \"The network observations show small, repetitive payloads and completed handshakes (SF), which aligns with the reference threat knowledge of repeated authentication attempts. However, the low prediction confidence and alternative benign prediction suggest some ambiguity in this correlation.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"If successful, a brute-force attack could lead to unauthorized access or disruption of O-RAN services.\",\n  \"immediate_response\": \"Verify the integrity of the O-Cloud Edge Server (O-RAN O-Cloud) and ensure all authentication attempts are legitimate.\",\n  \"long_term_mitigation\": \"Implement rate limiting on authentication attempts, monitor for suspicious patterns, and consider using multi-factor authentication.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The low prediction confidence (0.5733) and alternative benign prediction suggest that human review is necessary to confirm the threat category.\"\n}",
+    "generation_time_seconds": 51.391,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  },
+  {
+    "alert": {
+      "alert_id": "CEE72P2c6zPyrhQlOf",
+      "detection_timestamp": "",
+      "predicted_threat_class": "dos",
+      "prediction_confidence": 0.4949,
+      "alternative_predictions": [
+        {
+          "class": "dos",
+          "confidence": 0.4949
+        },
+        {
+          "class": "benign",
+          "confidence": 0.3273
+        },
+        {
+          "class": "ddos",
+          "confidence": 0.1246
+        }
+      ],
+      "affected_network_component": "O-Cloud Edge Server (O-RAN O-Cloud)",
+      "network_observations": {
+        "source port": 61381,
+        "destination port": 53,
+        "transport protocol": "udp",
+        "application service": "dns",
+        "flow duration (s)": 0.002646,
+        "bytes sent by source": 92.0,
+        "bytes sent by destination": 780.0,
+        "connection state": "SF",
+        "missed_bytes": 0,
+        "TCP flag history": "Dd",
+        "packets from source": 2,
+        "src_ip_bytes": 148,
+        "packets from destination": 2,
+        "dst_ip_bytes": 836,
+        "ip_proto": 17,
+        "http_trans_depth": 0,
+        "files_total_bytes": 0.0,
+        "is_GET_mthd": 0,
+        "http_status_error": 0,
+        "is_file_transfered": 0
+      }
+    },
+    "true_label": "dos",
+    "llm_response": {
+      "contextualisation": "This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server, characterized by short-lived or incomplete connections and high frequency towards one destination.",
+      "correlation_with_known_behaviour": "The network observations show small packet sizes, high frequency toward one destination, and many short-lived connections, which aligns with the reference threat knowledge for a DoS attack.",
+      "severity": "Medium",
+      "possible_impact": "A successful attack could exhaust the target's resources or connection capacity, leading to service disruptions or data loss.",
+      "immediate_response": "Verify the network observations and check the server's resource utilization to ensure it is not being overwhelmed by a legitimate traffic surge.",
+      "long_term_mitigation": "Implement rate limiting and IP blocking mechanisms on the O-Cloud Edge Server to prevent similar attacks in the future.",
+      "human_review_required": true,
+      "human_review_reason": "The prediction confidence (0.4949) is moderate, and alternative predictions include a benign classification with lower confidence, indicating that human review is necessary to confirm or reject this alert."
+    },
+    "raw_response": "{\n  \"contextualisation\": \"This alert indicates a potential Denial of Service (DoS) attack on the O-Cloud Edge Server, characterized by short-lived or incomplete connections and high frequency towards one destination.\",\n  \"correlation_with_known_behaviour\": \"The network observations show small packet sizes, high frequency toward one destination, and many short-lived connections, which aligns with the reference threat knowledge for a DoS attack.\",\n  \"severity\": \"Medium\",\n  \"possible_impact\": \"A successful attack could exhaust the target's resources or connection capacity, leading to service disruptions or data loss.\",\n  \"immediate_response\": \"Verify the network observations and check the server's resource utilization to ensure it is not being overwhelmed by a legitimate traffic surge.\",\n  \"long_term_mitigation\": \"Implement rate limiting and IP blocking mechanisms on the O-Cloud Edge Server to prevent similar attacks in the future.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence (0.4949) is moderate, and alternative predictions include a benign classification with lower confidence, indicating that human review is necessary to confirm or reject this alert.\"\n}",
+    "generation_time_seconds": 50.297,
+    "error": null,
+    "missing_fields": [],
+    "invented_indicators": []
+  }
+]

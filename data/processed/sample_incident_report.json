@@ -1,0 +1,61 @@
+{
+  "alert": {
+    "alert_id": "CXAb1k1Dtddl7eTeXc",
+    "detection_timestamp": "",
+    "predicted_threat_class": "benign",
+    "prediction_confidence": 1.0,
+    "alternative_predictions": [
+      {
+        "class": "benign",
+        "confidence": 1.0
+      },
+      {
+        "class": "bruteforce",
+        "confidence": 0.0
+      },
+      {
+        "class": "web",
+        "confidence": 0.0
+      }
+    ],
+    "affected_network_component": "O-Cloud Edge Server -- HTTP/HTTPS service",
+    "network_observations": {
+      "source port": 5524,
+      "destination port": 80,
+      "transport protocol": "tcp",
+      "application service": "http",
+      "flow duration (s)": 16.517246,
+      "bytes sent by source": 45000.0,
+      "bytes sent by destination": 1417569.0,
+      "connection state": "SF",
+      "missed_bytes": 0,
+      "TCP flag history": "ShADadtTFf",
+      "packets from source": 410,
+      "src_ip_bytes": 61484,
+      "packets from destination": 851,
+      "dst_ip_bytes": 1453769,
+      "ip_proto": 6,
+      "http_trans_depth": 178,
+      "files_total_bytes": 7283.0,
+      "is_GET_mthd": 1,
+      "http_status_error": 0,
+      "is_file_transfered": 1
+    }
+  },
+  "true_label": "benign",
+  "llm_response": {
+    "contextualisation": "This alert indicates a normal HTTP/HTTPS connection from an O-Cloud Edge Server to a destination server, which is expected behaviour.",
+    "correlation_with_known_behaviour": "The network observations show proportionate byte/packet counts in both directions and a clean connection state (SF), aligning with the reference threat knowledge for 'benign'.",
+    "severity": "Low",
+    "possible_impact": "If this is a real, successful attack, it could be used to exfiltrate sensitive data or inject malware into the network.",
+    "immediate_response": "Verify the connection state and ensure that all HTTP/HTTPS traffic is properly secured.",
+    "long_term_mitigation": "Implement additional security measures such as intrusion detection systems, secure configuration of O-Cloud Edge Servers, and regular monitoring of HTTP/HTTPS traffic.",
+    "human_review_required": true,
+    "human_review_reason": "The prediction confidence is high (1.0) and there are no alternative predictions with a higher confidence level."
+  },
+  "raw_response": "{\n  \"contextualisation\": \"This alert indicates a normal HTTP/HTTPS connection from an O-Cloud Edge Server to a destination server, which is expected behaviour.\",\n  \"correlation_with_known_behaviour\": \"The network observations show proportionate byte/packet counts in both directions and a clean connection state (SF), aligning with the reference threat knowledge for 'benign'.\",\n  \"severity\": \"Low\",\n  \"possible_impact\": \"If this is a real, successful attack, it could be used to exfiltrate sensitive data or inject malware into the network.\",\n  \"immediate_response\": \"Verify the connection state and ensure that all HTTP/HTTPS traffic is properly secured.\",\n  \"long_term_mitigation\": \"Implement additional security measures such as intrusion detection systems, secure configuration of O-Cloud Edge Servers, and regular monitoring of HTTP/HTTPS traffic.\",\n  \"human_review_required\": true,\n  \"human_review_reason\": \"The prediction confidence is high (1.0) and there are no alternative predictions with a higher confidence level.\"\n}",
+  "generation_time_seconds": 57.845,
+  "error": null,
+  "missing_fields": [],
+  "invented_indicators": []
+}
